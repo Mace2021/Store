@@ -17,21 +17,35 @@
     <div style="text-align: left">
       <img src="/images/logo.png" alt="logo" class="logo">
     </div>
-    <a href="./index.html">Home</a>
+    <a href="./index.html" >Home</a>
     <a href="./store.html" class="active">Store</a>
     <a href="./contact.html">Contact</a>
     <a href="./about.html">About</a>
     <a href="#" class="icon" id="menuIcon">
       <i class="fa fa-bars"></i>
     </a>
+    <a href="#" class="cart-icon" id="cartIcon">
+      <i class="fa fa-shopping-cart"></i>
+    </a>
   </div>
-
-  <section class="gallery">
+  
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-content" id="cartContent">
+      <!-- Cart items will be displayed here -->
+    </div>
+    <div class="cart-checkout">
+      <!-- Checkout options and total amount will be displayed here -->
+      <button id="checkoutBtn">Checkout</button>
+    </div>
+  </div>
+  <!-- End of Cart Modal -->
+  
+  <div class="gallery">
     <!-- Product Cards -->
     <div id="product-container"></div>
     <!-- End of Product Cards -->
-  </section>
-  
+  </div>
     
   </main>
   
@@ -45,5 +59,6 @@
   </footer>
 
   <script src="script.js" type="module"></script>
+  <script src="script1.js" type="module"></script>
 </body>
 </html>
