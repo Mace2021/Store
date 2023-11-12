@@ -11,8 +11,18 @@ body {
   padding: 0;
   font-family:'Courier New', Courier, monospace;
 }
-
-
+.africa{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.items{
+  width: 86%;
+}
+.time{
+  width: 28%;
+  display: block;
+}
 
 .logo {
   width: 80px;
