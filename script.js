@@ -8,6 +8,11 @@ function createProductCard(product) {
 
   const image = document.createElement('img');
   image.src = product.image;
+  // Add a click event listener to the image
+  image.addEventListener('click', () => {
+    // Toggle a class to make the image bigger
+    image.classList.toggle('enlarged');
+  });
   card.appendChild(image);
 
   const title = document.createElement('h3');
@@ -21,6 +26,7 @@ function createProductCard(product) {
 
   const description = document.createElement('p');
   const weight = product.description[0].weight;
+
   const price = product.description[0].price;
   description.textContent = `Weight: ${weight}, Price: ${price}`;
   card.appendChild(description);
@@ -49,14 +55,4 @@ products.forEach((product) => {
 });
 
 
-
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-document.getElementById("menuIcon").addEventListener("click", function() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-});
 

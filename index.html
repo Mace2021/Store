@@ -6,47 +6,83 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <title>Rolaz Food</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <title>Rolaz Food</title>
+  <style>
+  .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
 </head>
 <body>
-  <div class="topnav" id="myTopnav">
-    <div style="text-align: left">
-      <img src="/images/logo.png" alt="logo" class="logo">
-    </div>
-    <a href="./index.html" class="active">Home</a>
-    <a href="./store.html">Store</a>
-    <a href="./contact.html">Contact</a>
-    <a href="./about.html">About</a>
-    <a href="#" class="icon" id="menuIcon">
+  <!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white  w3-theme-d2 w3-left-align" style="letter-spacing:4px;">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="./index.html" class="w3-bar-item w3-button "id="logo"> 
+      <img src="./images/RFlogo.png" alt="logo" class=" logo"></a>
+    
+  
+    <!-- Right-sided navbar links. Hide them on small screens -->
+  
+     
+    
+      <a href="./index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+      <a href="./about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
+      <a href="./store.html" class="w3-bar-item w3-button w3-padding-large">Store</a>
+      <a href="./contact.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+      <a href="#" class="icon" id="menuIcon">
       <i class="fa fa-bars" ></i>
     </a>
-    <a href="#" class="cart-icon" id="cartIcon" >
-      <i class="fa fa-shopping-cart" ></i>
-    </a>
-  </div>
-  <div class="africa">
-    <iframe src="./images/cowskin.png" class="items"></iframe>
-    <div class="time" style="text-align:center;padding:1em 0;"> <h2><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/2332459"><span style="color:gray;">Current local time in</span><br />Lagos, Nigeria</a></h2> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=&timezone=Africa%2FLagos" width="100%" height="150" frameborder="0" seamless></iframe> </div>
-  </div>
-  <!-- Cart Modal -->
-  <div class="cart-modal" id="cartModal">
-    <div class="cart-content" id="cartContent">
-      <!-- Cart items will be displayed here -->
-    </div>
-    <div class="cart-checkout">
-      <!-- Checkout options and total amount will be displayed here -->
-      <button id="checkoutBtn">Checkout</button>
-    </div>
-  </div>
-  <!-- End of Cart Modal -->
   
-  <div class="gallery">
-    <!-- Product Cards -->
-    <div id="product-container"></div>
-    <!-- End of Product Cards -->
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
   </div>
+   <!-- Navbar on small screens -->
+   <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="./index.html" class="w3-bar-item w3-button">Home</a>
+    <a href="/about.html" class="w3-bar-item w3-button">About</a>
+    <a href="./store.html" class="w3-bar-item w3-button">Store</a>
+    <a href="./contact.html" class="w3-bar-item w3-button">Contact</a>
+    <a href="#" class="w3-bar-item w3-button">Search</a>
+  </div>
+</div>
+   
+  
 
-  <footer>
+
+
+ <!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px; " id="home">
+  <img class="w3-image" src="./images/headhero.png" alt="Store items" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge" style="text-align: center;">One Stop Shopping</h1>
+  </div>
+</header>
+
+
+  
+ <!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="./images/cowskinpic.png" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About Rolaz Food</h1><br>
+      <h5 class="w3-center">Operation since 2020</h5>
+      <p class="w3-large">The Rolaz Food was founded in Texas by Mrs. --- <span class="w3-tag w3-light-grey">Popular </span> Items.</p>
+      <p class="w3-large w3-text-grey w3-hide-medium">Our most demand food items are ----.</p>
+    </div>
+  </div>
+</div>
+  <hr>
+
+  <!-- Footer -->
+  <footer class="w3-center w3-light-grey w3-padding-32">
     <ul class="social-media">
       <li><a href="https://www.facebook.com/ZeebayAfricanFoods" target="_blank"><img src="images/facebook.png" alt="Facebook"></a></li>
       <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
@@ -57,5 +93,29 @@
 
   <script src="script.js" type="module"></script>
   <script src="script1.js" type="module"></script>
+  <script>
+    // Script for side navigation
+    function w3_open() {
+      var x = document.getElementById("mySidebar");
+      x.style.width = "300px";
+      x.style.paddingTop = "10%";
+      x.style.display = "block";
+    }
+    
+    // Close side navigation
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+    
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    </script>
 </body>
 </html>
