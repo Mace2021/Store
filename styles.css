@@ -113,7 +113,9 @@ font-size: small;
   
   border: 1px solid #ccc;
 }
-
+.enlarged{
+  width: 150%;
+}
 .contact form {
   display: flex;
   flex-direction: column;
