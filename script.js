@@ -56,3 +56,7 @@ products.forEach((product) => {
 
 
 
+document.querySelector('.cart-link').addEventListener('click', function() {
+  // Replace 'cart.html' with the actual URL of your shopping cart page
+  window.location.href = 'cart.html';
+});

@@ -28,7 +28,12 @@ h1, h2, h3, h4, h5, h6 {
  margin-right: 400px;
  box-shadow:  0 0 5px rgba(0, 0, 0, 0.2);;
 }
-
+.cart-link {
+  background-color: #ff0000; /* Change the background color to your desired color */
+  color: #ffffff; /* Change the text color to your desired color */
+  font-weight: bold; /* Make the text bold */
+  padding: 10px 20px; /* Adjust the padding as needed */
+}
 
 .product-card img {
   width: 100%;

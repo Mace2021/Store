@@ -44,3 +44,39 @@ products.forEach((product) => {
   const addToCartBtn = productCard.querySelector('.add-to-cart-btn');
   addToCartBtn.addEventListener('click', () => addToCart(product));
 });
+
+
+
+
+
+ // Get the cart items from local storage
+ const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+ // Function to render the cart items
+ function renderCartItems() {
+   const cartContainer = document.querySelector('.cart-container');
+ 
+   // Clear the existing cart items
+   cartContainer.innerHTML = '';
+ 
+   // Render each cart item
+   cartItems.forEach(item => {
+     const cartItemElement = document.createElement('div');
+     cartItemElement.classList.add('cart-item');
+ 
+     // Create and append the item details
+     const itemNameElement = document.createElement('h3');
+     itemNameElement.textContent = item.name;
+     cartItemElement.appendChild(itemNameElement);
+ 
+     const itemPriceElement = document.createElement('p');
+     itemPriceElement.textContent = `$${item.price}`;
+     cartItemElement.appendChild(itemPriceElement);
+ 
+     // Add the cart item to the cart container
+     cartContainer.appendChild(cartItemElement);
+   });
+ }
+ 
+ // Call the renderCartItems function to initially render the cart items
+ renderCartItems();

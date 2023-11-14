@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <title>Rolaz Food</title>
   <style>
   .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
+
+.fa-shopping-cart {
+color: #0099CC
+}
 </style>
 </head>
 <body>
@@ -33,8 +38,9 @@
       <a href="./store.html" class="w3-bar-item w3-button w3-padding-large">Store</a>
       <a href="./contact.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
       <a href="#" class="icon" id="menuIcon">
-      <i class="fa fa-bars" ></i>
-    </a>
+        <a href="./cart.html" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Shopping Cart">
+    
+          <i class="fa fa-shopping-cart" style="font-size:36px"></i></a>
   
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
   </div>
@@ -44,7 +50,10 @@
     <a href="/about.html" class="w3-bar-item w3-button">About</a>
     <a href="./store.html" class="w3-bar-item w3-button">Store</a>
     <a href="./contact.html" class="w3-bar-item w3-button">Contact</a>
-    <i style='font-size:24px' class='fas'>&#xf07a;</i>
+     <!-- Add shopping cart icon and link -->
+     <a href="./cart.html" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Shopping Cart">
+    
+      <i class="fa fa-shopping-cart" style="font-size:36px"></i></a>
     <a href="#" class="w3-bar-item w3-button">Search</a>
   </div>
 </div>
