@@ -6,7 +6,13 @@ function updateCartIcon() {
   const cartIcon = document.querySelector('.cart-icon');
   cartIcon.textContent = cart.length;
 }
-
+function calculateTotal() {
+  let total = 0;
+  for (let i = 0; i < cart.length; i++) {
+    total += cart[i].description[0].price;
+  }
+  return total;
+}
 function addToCart(product) {
   cart.push(product);
   updateCartIcon();
@@ -17,7 +23,7 @@ function addToCart(product) {
 
   // Create a new div for the cart item
   const cartItem = document.createElement('div');
-  cartItem.textContent = `${product.title} - ${product.price}`;
+  cartItem.textContent = `${product.title} - ${product.description[0].price}`;
   cartItems.appendChild(cartItem);
       // Adds a product to the cart list
       it('should add a product to the cart list when addToCart is called', () => {
@@ -25,6 +31,13 @@ function addToCart(product) {
         addToCart(product);
         expect(cart).toContain(product);
       });
+      // Create a new div for the cart item
+  
+
+  // Calculate and display the total
+  const total = calculateTotal();
+  const totalDiv = document.getElementById('total');
+  totalDiv.textContent = `Total: ${total}`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
