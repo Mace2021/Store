@@ -39,7 +39,7 @@ color: #0099CC
       <a href="./contact.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
       <a href="#" class="icon" id="menuIcon">
     <!-- Add shopping cart icon and link -->
-<a href="./cart.html" class="w3-bar-item w3-button w3-right w3-hover-teal" title="Shopping Cart">
+<a href="./cart.html" class="w3-bar-item w3-button w3-right w3-hover-teal onclic:checkout()" title="Shopping Cart">
   <i style='font-size:24px' class='fas'>&#xf07a;</i>
 </a>
 
@@ -55,7 +55,7 @@ color: #0099CC
     <a href="./contact.html" class="w3-bar-item w3-button">Contact</a>
      <!-- Add shopping cart icon and link -->
    <!-- Add shopping cart icon and link -->
-<a href="./cart.html" class="w3-bar-item w3-button w3-right w3-hover-teal" title="Shopping Cart">
+<a href="./cart.html" class="w3-bar-item w3-button w3-right w3-hover-teal onclic:checkout()" title="Shopping Cart">
   <i style='font-size:24px' class='fas'>&#xf07a;</i>
 </a>
 
@@ -77,20 +77,9 @@ color: #0099CC
 </header>
 <hr>
   <div class="w3-content" style="max-width:1600px;display:block;text-align:center">
-      <div class="w3-row w3-padding-64" id="about">
+      <div class="w3-row w3-padding-64" id="store">
        
-  
-  <!-- Cart Modal -->
-  <div class="cart-modal" id="cartModal">
-    <div class="cart-content" id="cartContent">
-      <!-- Cart items will be displayed here -->
-    </div>
-    <div class="cart-checkout">
-      <!-- Checkout options and total amount will be displayed here -->
-      <button id="checkoutBtn">Checkout</button>
-    </div>
-  </div>
-  <!-- End of Cart Modal -->
+
   
   <div class="gallery">
     <!-- Product Cards -->
@@ -113,6 +102,7 @@ color: #0099CC
   <script src="script1.js" type="module"></script>
   <script>
     // Script for side navigation
+    document.addEventListener('DOMContentLoaded', () => {
     function w3_open() {
       var x = document.getElementById("mySidebar");
       x.style.width = "300px";
@@ -134,6 +124,26 @@ color: #0099CC
         x.className = x.className.replace(" w3-show", "");
       }
     }
+  });
+    </script>
+
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const addToCartBtn = document.getElementById('addToCart');
+      
+        addToCartBtn.addEventListener('click', () => {
+          // Get product data
+          const item = {
+            name: document.getElementById('productName').innerText,
+            price: document.getElementById('productPrice').innerText
+          };
+      
+          // Add to cart
+          addToCart(item);
+        });
+      });
+      
     </script>
 </body>
 </html>

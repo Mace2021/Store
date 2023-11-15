@@ -1,5 +1,5 @@
 import products from './data.js';
-
+document.addEventListener('DOMContentLoaded', () => {
 const productContainer = document.getElementById('product-container');
 
 function createProductCard(product) {
@@ -44,7 +44,7 @@ function createProductCard(product) {
       alert(`${product.title} is out of stock.`);
     }
   });
-  card.appendChild(addToCartButton);
+
 
   return card;
 }
@@ -52,6 +52,28 @@ function createProductCard(product) {
 products.forEach((product) => {
   const productCard = createProductCard(product);
   productContainer.appendChild(productCard);
+
+  // Add to cart button for each product
+  const addToCartButton = document.createElement('button');
+  addToCartButton.textContent = 'Add to Cart';
+  addToCartButton.addEventListener('click', () => {
+    // Here, use the product parameter and stockStatus related to the current product
+    if (product.numberOfItems > 0) {
+      alert(`Added ${product.title} to cart.`);
+      product.numberOfItems--;
+      stockStatus.textContent = product.numberOfItems > 0 ? 'In Stock' : 'Out of Stock';
+      stockStatus.classList.remove('in-stock', 'out-of-stock');
+      stockStatus.classList.add(product.numberOfItems > 0 ? 'in-stock' : 'out-of-stock');
+
+      // Add the product to the cart
+      addToCart(product);
+    } else {
+      alert(`${product.title} is out of stock.`);
+    }
+  });
+
+  // Append the add to cart button to the product card
+  productCard.appendChild(addToCartButton);
 });
 
 
@@ -59,4 +81,67 @@ products.forEach((product) => {
 document.querySelector('.cart-link').addEventListener('click', function() {
   // Replace 'cart.html' with the actual URL of your shopping cart page
   window.location.href = 'cart.html';
+});
+
+
+
+
+
+let cart = [];
+
+// Add product to cart
+const addToCartButton = document.createElement('button');
+addToCartButton.id = 'addToCart'; // Add this line to set the ID
+addToCartButton.textContent = 'Add to Cart';
+addToCartButton.addEventListener('click', () => {
+  const product = products[0]; // You need to define the product to add to the cart
+  if (product.numberOfItems > 0) {
+    alert(`Added ${product.title} to cart.`);
+    product.numberOfItems--;
+    // Update the stock status and its class here
+    renderCart(); // Update the cart UI
+  } else {
+    alert(`${product.title} is out of stock.`);
+  }
+});
+card.appendChild(addToCartButton);
+
+
+
+// Update cart UI
+function renderCart() {
+
+  let html = '';
+
+  cart.forEach(item => {
+    html += `
+      <div>
+        ${item.name} - $${item.price} x ${item.quantity}
+      </div>
+    `;
+  });
+
+  document.getElementById('cartItems').innerHTML = html;
+
+}
+
+// Initial render
+renderCart();
+
+// Checkout button click
+document.getElementById('checkoutBtn').addEventListener('click', () => {
+  if (cart.length > 0) {
+    alert('Checkout Successful!');
+    // Implement any additional logic here, such as sending an order to the server
+    // Clear the cart after successful checkout
+    cart = [];
+    renderCart(); // Update the cart UI
+  } else {
+    alert('Your cart is empty. Add items before checking out.');
+  }
+});
+
+// Add product
+addToCart(products[0]);
+
 });
