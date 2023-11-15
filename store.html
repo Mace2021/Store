@@ -39,7 +39,7 @@ color: #0099CC
       <a href="./contact.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
       <a href="#" class="icon" id="menuIcon">
     <!-- Add shopping cart icon and link -->
-<a href="./cart.html" class="w3-bar-item w3-button w3-right w3-hover-teal onclic:checkout()" title="Shopping Cart">
+<a href="./cart.html" class="w3-bar-item w3-button w3-right w3-hover-teal onclic:checkout() cart-icon" title="Shopping Cart">
   <i style='font-size:24px' class='fas'>&#xf07a;</i>
 </a>
 
@@ -55,7 +55,7 @@ color: #0099CC
     <a href="./contact.html" class="w3-bar-item w3-button">Contact</a>
      <!-- Add shopping cart icon and link -->
    <!-- Add shopping cart icon and link -->
-<a href="./cart.html" class="w3-bar-item w3-button w3-right w3-hover-teal onclic:checkout()" title="Shopping Cart">
+<a href="./cart.html" class="w3-bar-item w3-button w3-right w3-hover-teal onclic:checkout() cart-icon" title="Shopping Cart">
   <i style='font-size:24px' class='fas'>&#xf07a;</i>
 </a>
 
@@ -128,22 +128,6 @@ color: #0099CC
     </script>
 
     
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const addToCartBtn = document.getElementById('addToCart');
-      
-        addToCartBtn.addEventListener('click', () => {
-          // Get product data
-          const item = {
-            name: document.getElementById('productName').innerText,
-            price: document.getElementById('productPrice').innerText
-          };
-      
-          // Add to cart
-          addToCart(item);
-        });
-      });
-      
-    </script>
+    
 </body>
 </html>

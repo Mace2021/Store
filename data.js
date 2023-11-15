@@ -16,20 +16,7 @@ const products = [
   { image: '/images/Oil.jpg', title: 'Oil', numberOfItems: 0, description: [{ weight: '2gals', price: '$50'  }] },
 
 ];
-document.addEventListener('DOMContentLoaded', () => {
-  const addToCartBtn = document.getElementById('addToCart');
 
-  addToCartBtn.addEventListener('click', () => {
-    // Get product data
-    const item = {
-      name: document.getElementById('productName').innerText,
-      price: document.getElementById('productPrice').innerText
-    };
-
-    // Add to cart
-    addToCart(item);
-  });
-});
 
 export default products;
 
