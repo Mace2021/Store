@@ -79,7 +79,9 @@
         <a href="#" class="icon" id="menuIcon">
       <!-- Add shopping cart icon and link -->
       <a href="#" class="w3-bar-item w3-button w3-right w3-hover-teal" title="Shopping Cart" id="cartIcon">
-        <i style='font-size:24px' class='fas fa-shopping-cart'></i>
+        <i class="fa fa-shopping-cart"></i>
+        <span id="cart-number">0</span>
+      
       </a>
 
       <a href="#" class="w3-bar-item w3-button w3-right w3-hover-teal" title="Search">
@@ -98,7 +100,9 @@
      <!-- Add shopping cart icon and link -->
    <!-- Add shopping cart icon and link -->
 <a href="./cart.html" class="w3-bar-item w3-button w3-right w3-hover-teal onclic:checkout() cart-icon" title="Shopping Cart">
-  <i style='font-size:24px' class='fas'>&#xf07a;</i>
+  <i class="fa fa-shopping-cart"></i>
+  <span id="cart-number">0</span>
+
 </a>
 
 <a href="#" class="w3-bar-item w3-button w3-right w3-hover-teal" title="Search">
@@ -107,64 +111,30 @@
 
     <!-- Your existing mobile navbar code -->
   </div>
-
+  </div>
   <!-- Header -->
-  <header class="w3-display-container w3-content w3-wide" style="max-width:100%;min-width:500px;padding-top:100px; display:block; justify-content:center; justify-items:center" id="home">
+  
+<header class="w3-display-container w3-content w3-wide" style="max-width:100%;min-width:500px;padding-top:190px; display:block; justify-content:center; justify-items:center" id="home">
     <!-- Your existing header content -->
- 
-
-
+   
+    
     <div id="cartItems"></div>
-    <div id="total" onclick="calculateTotal()"></div>
-    <button id="checkoutBtn">Checkout</button>
+    <div id="total"></div>
+    <button id="checkout">Checkout</button>
+      
 </header>
 
   <footer>
     <p>&copy; 2024 Your Store. All rights reserved.</p>
   </footer>
 
-  <script type="module" src="script.js"></script>
-  <script type="module" src="./script1.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const cartIcon = document.getElementById('cartIcon');
-      const checkoutBtn = document.getElementById('checkoutBtn');
+  <script type="module" src="./script.js"></script>
+ 
+  
 
-      // Add click event for the cart icon
-      cartIcon.addEventListener('click', () => {
-        // Replace 'cart.html' with the actual URL of your shopping cart page
-        window.location.href = 'cart.html';
-      });
 
-      // Add click event for the checkout button
-      checkoutBtn.addEventListener('click', () => {
-        // Implement your checkout logic here
-        alert('Checkout clicked!');
-      });
-    });
-  </script>
-  <script>
-    // Then, in your cart.html file, add a script tag with the following code:
 
-document.addEventListener('DOMContentLoaded', () => {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartItems = document.getElementById('cartItems');
-    const totalDiv = document.getElementById('total');
+
   
-    let total = 0;
-    cart.forEach(product => {
-      const cartItem = document.createElement('div');
-      cartItem.textContent = `${product.title} - ${product.description[0].price}`;
-      cartItems.appendChild(cartItem);
-  
-      // Calculate the total
-      total += product.description[0].price;
-    });
-  
-    // Display the total
-    totalDiv.textContent = `Total: ${total}`;
-  });
-  
-  </script>
 </body>
 </html>
