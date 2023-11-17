@@ -6,7 +6,7 @@ let cart = [];
 function updateCartIcon() {
   const cartIcon = document.querySelector('.cart-icon');
   if (cartIcon) {
-    cartIcon.textContent = cart.length;
+    cartIcon.textContent ="🛒"+cart.length;
   }
 }
 
@@ -141,12 +141,14 @@ function displayCartItems() {
 
 
 
-function openNav() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
+document.querySelector('.fa-bars').addEventListener('click', () => {
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    if (link.style.display === 'block') {
+      link.style.display = 'none';
+    } else {
+      link.style.display = 'block';
+    }
+  });
+});
 

@@ -60,57 +60,32 @@
 </head>
 <body>
   <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-bar w3-white w3-theme-d2 w3-left-align" style="letter-spacing:4px;">
-      <!-- Your existing navbar code -->
-      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-      <a href="./index.html" class="w3-bar-item w3-button "id="logo"> 
-        <img src="./images/RFlogo.png" alt="logo" class=" logo"></a>
-      
-    
-      <!-- Right-sided navbar links. Hide them on small screens -->
-    
-       
-      
-        <a href="./index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-        <a href="./about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
-        <a href="./store.html" class="w3-bar-item w3-button w3-padding-large">Store</a>
-        <a href="./contact.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-        <a href="#" class="icon" id="menuIcon">
-      <!-- Add shopping cart icon and link -->
-      <a href="#" class="w3-bar-item w3-button w3-right w3-hover-teal" title="Shopping Cart" id="cartIcon">
-        <i class="fa fa-shopping-cart"></i>
-        <span id="cart-number">0</span>
-      
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top" >
+    <div class="topnav w3-white" id="myTopNav" style="letter-spacing:4px;">
+      <a class="topnav-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" ><i class="fa fa-bars"></i></a>
+      <a href="./index.html" class="w3-bar-item w3-button" id="logo"> 
+        <img src="./images/RFlogo.png" alt="logo" class="logo">
       </a>
+  
+      <!-- Right-sided navbar links. Hide them on small screens -->
+      <a href="./index.html" class="w3-bar-item w3-button w3-padding-large nav-link">Home</a>
+<a href="./about.html" class="w3-bar-item w3-button w3-padding-large nav-link">About</a>
+<a href="./store.html" class="w3-bar-item w3-button w3-padding-large nav-link">Store</a>
+<a href="./contact.html" class="w3-bar-item w3-button w3-padding-large nav-link">Contact</a>
 
-      <a href="#" class="w3-bar-item w3-button w3-right w3-hover-teal" title="Search">
-        <i class="fa fa-search"></i>
+      <a href="#" class="icon" id="menuIcon">
+        <!-- Add shopping cart icon and link -->
+        <a href="./cart.html" class="w3-bar-item w3-button w3-right w3-hover-teal cart-icon" title="Shopping Cart">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cart-number"></span>
+        </a>
+        <a href="#" class="w3-bar-item w3-button w3-right w3-hover-teal" title="Search">
+          <i class="fa fa-search"></i>
+        </a>
       </a>
     </div>
-
-    <!-- Navbar on small screens -->
-    
-   <!-- Navbar on small screens -->
-   <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-    <a href="./index.html" class="w3-bar-item w3-button">Home</a>
-    <a href="/about.html" class="w3-bar-item w3-button">About</a>
-    <a href="./store.html" class="w3-bar-item w3-button">Store</a>
-    <a href="./contact.html" class="w3-bar-item w3-button">Contact</a>
-     <!-- Add shopping cart icon and link -->
-   <!-- Add shopping cart icon and link -->
-<a href="./cart.html" class="w3-bar-item w3-button w3-right w3-hover-teal onclic:checkout() cart-icon" title="Shopping Cart">
-  <i class="fa fa-shopping-cart"></i>
-  <span id="cart-number">0</span>
-
-</a>
-
-<a href="#" class="w3-bar-item w3-button w3-right w3-hover-teal" title="Search">
-  <i class="fa fa-search"></i>
-</a>
-
-    <!-- Your existing mobile navbar code -->
-  </div>
+   
   </div>
   <!-- Header -->
   
