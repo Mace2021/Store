@@ -9,52 +9,25 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-    .w3-bar, h1, button {
-      font-family: "Montserrat", sans-serif;
-    }
-
-    .fa-anchor, .fa-coffee {
-      font-size: 200px;
-    }
-
-    .fa-shopping-cart {
-      color: #0099CC;
-    }
-
-    /* Reset default styles */
-    body, h1 {
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Header styles */
-    header {
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-
-    h1 {
-      color: #333;
-    }
-
-    /* Main content styles */
-    main {
-      margin: 20px;
-    }
-
-    /* Footer styles */
-    footer {
-      background-color: #f2f2f2;
-      padding: 10px;
-      text-align: center;
-    }
-
+  
     /* General styles */
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.4;
-      color: #333;
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; /* Adjust as needed */
     }
+    
+    .carts {
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+
   </style>
   <title>Rolaz Food</title>
 </head>
@@ -76,11 +49,11 @@
 
       <a href="#" class="icon" id="menuIcon">
         <!-- Add shopping cart icon and link -->
-        <a href="./cart.html" class="w3-bar-item w3-button w3-right w3-hover-teal cart-icon" title="Shopping Cart">
+        <a href="./cart.html" class="w3-bar-item w3-button w3-padding-large nav-link cart-icon" title="Shopping Cart">
           <i class="fa fa-shopping-cart"></i>
           <span id="cart-number"></span>
         </a>
-        <a href="#" class="w3-bar-item w3-button w3-right w3-hover-teal" title="Search">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large nav-link" title="Search">
           <i class="fa fa-search"></i>
         </a>
       </a>
@@ -89,7 +62,7 @@
   </div>
   <!-- Header -->
   
-<header class="w3-display-container w3-content w3-wide" style="max-width:100%;min-width:500px;padding-top:190px; display:block; justify-content:center; justify-items:center" id="home">
+<div class="carts" >
     <!-- Your existing header content -->
    
     
@@ -97,11 +70,18 @@
     <div id="total"></div>
     <button id="checkout">Checkout</button>
       
-</header>
+</div>
 
-  <footer>
-    <p>&copy; 2024 Your Store. All rights reserved.</p>
-  </footer>
+  
+    <footer class="w3-center w3-light-grey w3-padding-32">
+      <ul class="social-media">
+        <li><a href="https://www.facebook.com/ZeebayAfricanFoods" target="_blank"><img src="images/facebook.png" alt="Facebook"></a></li>
+        <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
+        <li><a href="https://www.instagram.com/zeebay_africanfoods/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a></li>
+      </ul>
+      <p>Thank you for shopping with us. Come again</p>
+      <p>&copy; 2024 Your Store. All rights reserved.</p>
+    </footer>
 
   <script type="module" src="./script.js"></script>
  
