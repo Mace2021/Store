@@ -152,3 +152,13 @@ document.querySelector('.fa-bars').addEventListener('click', () => {
   });
 });
 
+
+
+document.getElementById('searchIcon').addEventListener('click', () => {
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox.style.display === 'none') {
+    searchBox.style.display = 'block';
+  } else {
+    searchBox.style.display = 'none';
+  }
+});

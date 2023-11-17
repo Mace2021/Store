@@ -19,22 +19,16 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-.logo {
-  width: 65px;
-  height: 40px;
-  border: solid rgb(238, 188, 130);
- position: relative;
- float: left;
- margin-right: 400px;
- box-shadow:  0 0 5px rgba(0, 0, 0, 0.2);;
-}
+
 .cart-link {
   background-color: #ff0000; /* Change the background color to your desired color */
   color: #ffffff; /* Change the text color to your desired color */
   font-weight: bold; /* Make the text bold */
   padding: 10px 20px; /* Adjust the padding as needed */
 }
-
+.logo{
+  width: 100px;
+}
 .product-card img {
   width: 100%;
   height: auto;
@@ -209,11 +203,7 @@ font-size: small;
     display: block;
     color: #ffffff;
   }
-  nav a#logo,
-  #ham-menu {
-    font-size: 3.2rem;
-  }
-}
+ 
 
 @media only screen and (max-width: 600px) {
   html {
