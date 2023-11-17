@@ -221,7 +221,9 @@ font-size: small;
   }
  
 }
-
+#checkout{border-radius: 10px;
+  background-color:lightgreen;
+}
 
     /* Header styles */
     header {
