@@ -87,7 +87,9 @@ h2,
   flex-wrap: wrap;
   justify-content: center; /* Center product cards horizontally */
 }
-
+#ihome{
+  width: 100%;
+}
 button {
   font-size: smaller;
 }
