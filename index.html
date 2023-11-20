@@ -139,26 +139,54 @@ color: #0099CC
     </script>
     <script>
       // Initialize like count and comment
-      var likeCount = 0;
-      var comment = '';
-  
-      // Function to handle 'Like' button click
-      function like() {
-          likeCount++;
-          var likeElement = document.querySelector('.fa.fa-thumbs-up');
-          if (likeElement) {
-              likeElement.textContent = ' ' + likeCount ;
-          }
-      }
-  
-      // Function to handle 'Comment' button click
-      function addComment() {
-          comment = prompt("Please enter your comment:");
-          var commentElement = document.querySelector('.commenttext');
-          if (commentElement) {
-              commentElement.textContent = comment;
-          }
-      }
-  </script>
+    var likeCount = 0;
+    var comment = '';
+
+    // Load likes and comments from local storage on page load
+    window.onload = function () {
+        if (localStorage.getItem('likeCount')) {
+            likeCount = parseInt(localStorage.getItem('likeCount'));
+            updateLikeDisplay();
+        }
+
+        if (localStorage.getItem('comment')) {
+            comment = localStorage.getItem('comment');
+            updateCommentDisplay();
+        }
+    };
+
+    // Function to handle 'Like' button click
+    function like() {
+        likeCount++;
+        updateLikeDisplay();
+        // Save likeCount to local storage
+        localStorage.setItem('likeCount', likeCount.toString());
+    }
+
+    // Function to handle 'Comment' button click
+    function addComment() {
+        comment = prompt("Please enter your comment:");
+        updateCommentDisplay();
+        // Save comment to local storage
+        localStorage.setItem('comment', comment);
+    }
+
+    // Function to update the like display
+    function updateLikeDisplay() {
+        var likeElement = document.querySelector('.fa.fa-thumbs-up');
+        if (likeElement) {
+            likeElement.textContent = ' ' + likeCount ;
+        }
+    }
+
+    // Function to update the comment display
+    function updateCommentDisplay() {
+        var commentElement = document.querySelector('.commenttext');
+        if (commentElement) {
+            commentElement.textContent = comment;
+        }
+    }
+</script>
+
 </body>
 </html>
