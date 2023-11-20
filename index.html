@@ -9,8 +9,10 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <title>Zeebay African Foods </title>
+ 
+  <title>Zeebay African Foods </title>
   <style>
   .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
@@ -69,17 +71,26 @@ color: #0099CC
 <div class="w3-content" style="max-width:1100px">
 
   <!-- About Section -->
-  <div class="w3-row w3-padding-64" id="index">
+  <div class="w3-row w3-padding-64" id="index" style="display: flex;">
     <div class="w3-col m6 w3-padding-large w3-hide-small">
      <img src="./images/cowskinpic.png" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
     </div>
 
-    <div class="w3-col m6 w3-padding-large">
+    <div class="w3-col m6 w3-padding-large" >
       <h1 class="w3-center">About Zeebay African Food</h1><br>
       <h5 class="w3-center">Operation since 2021</h5>
       <p class="w3-large">The Rolaz Food was founded in Texas by Mrs. --- <span class="w3-tag w3-light-grey">Popular </span> Items.</p>
       <p class="w3-large w3-text-grey w3-hide-medium">Our most demand food items are ----.</p>
     </div>
+    <div class="w3-container" style="display: flex; height: 100px; flex-wrap: wrap;">
+      <p>Please leave a comment</p>
+      <div>
+          <p class="commenttext"></p>
+          <button type="button" class="w3-button" onclick="like()"><i class="fa fa-thumbs-up"></i> Like</button>
+          <button type="button" class="w3-button" onclick="addComment()"><i class="fa fa-comment"></i> Comment</button>
+      </div>
+  </div>
+    
   </div>
 </div>
   
@@ -88,8 +99,7 @@ color: #0099CC
  
     
 </iframe>
-
-  </header>
+</header>
   
   <!-- Footer -->
   <footer class="w3-center w3-light-grey ">
@@ -102,7 +112,7 @@ color: #0099CC
   </footer>
 
   <script src="script.js" type="module"></script>
-  <script src="script1.js" type="module"></script>
+ 
   <script>
     // Script for side navigation
     function w3_open() {
@@ -127,5 +137,28 @@ color: #0099CC
       }
     }
     </script>
+    <script>
+      // Initialize like count and comment
+      var likeCount = 0;
+      var comment = '';
+  
+      // Function to handle 'Like' button click
+      function like() {
+          likeCount++;
+          var likeElement = document.querySelector('.fa.fa-thumbs-up');
+          if (likeElement) {
+              likeElement.textContent = ' ' + likeCount ;
+          }
+      }
+  
+      // Function to handle 'Comment' button click
+      function addComment() {
+          comment = prompt("Please enter your comment:");
+          var commentElement = document.querySelector('.commenttext');
+          if (commentElement) {
+              commentElement.textContent = comment;
+          }
+      }
+  </script>
 </body>
 </html>
