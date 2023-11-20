@@ -6,44 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="search-container"></div>
+    <div id="product-container"  onclick="displaySearchResults()"></div>
     <script type="module" src="./script.js"></script>
-    <script>
-
-        const form = document.getElementById('searchForm');
-        
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-        
-          const query = form.searchInput.value;
-        
-          const results = searchProducts(query); 
-          
-          window.location.href = `search.html?query=${query}`; 
-        });
-        
-        // Display results 
-        function displaySearchResults(results) {
-          // Clear current products
-          document.getElementById('product-container').innerHTML = '';
-        
-          // Show results  
-          results.forEach(result => {
-            const card = createCard(result);
-            document.getElementById('product-container').appendChild(card);
-          });
-        }
-        
-        const urlParams = new URLSearchParams(window.location.search);
-        const query = urlParams.get('query');
-        
-        const results = searchProducts(query);
-        displaySearchResults(results); 
-        
-        const homeBtn = document.getElementById('homeBtn');
-        homeBtn.addEventListener('click', () => {
-          window.location.href = 'index.html';
-        });
-    </script>
+    
 </body>
 </html>
