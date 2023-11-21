@@ -224,10 +224,4 @@ function createProductCard(product) {
 
 
 
-// Event listener for the search form
-document.getElementById('searchForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  var searchTerm = document.getElementById('searchBox').value;
-  console.log('Search term is: ' + searchTerm);
-});
 
