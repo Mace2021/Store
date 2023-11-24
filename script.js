@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function calculateTotal() {
+  function calculateTotal(product) {
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
       total += parseFloat(cart[i].description[0].price);
@@ -32,20 +32,64 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartPage();
   }
 
+
+  function calculateSubtotal(product) {
+    return product.numberOfItems * product.description[0].price.toFixed(2);
+  }
+  
+  function calculateTotal() {
+    let total = 0;
+    cart.forEach((product) => {
+      total += calculateSubtotal(product);
+    });
+    return total.toFixed(2);
+  }
+  
+
+
+
+
   function updateCartPage() {
     const cartItems = document.getElementById('cartItems');
     if (cartItems) {
       cartItems.innerHTML = '';
       cart.forEach((product, index) => {
+        // Set default value for numberOfItems if not set
+        if (product.numberOfItems === undefined) {
+          product.numberOfItems = 1;
+        }
+        
         const cartItem = document.createElement('div');
-        cartItem.textContent = `${product.title} - $${product.description[0].price}`;
+        
+        // Create elements for displaying product information
+        const productInfo = document.createElement('span');
+        productInfo.textContent = `${product.title} - $${product.description[0].price}`;
+        cartItem.appendChild(productInfo);
+  
+        const itemCount = document.createElement('span');
+        itemCount.textContent = "  - # in cart: ";
+        cartItem.appendChild(itemCount);
+  
+        const itemQuantityInput = document.createElement('input');
+        itemQuantityInput.type = 'number';
+        itemQuantityInput.value = product.numberOfItems;
+        itemQuantityInput.addEventListener('change', (event) => {
+          const newValue = parseInt(event.target.value, 10);
+          if (!isNaN(newValue) && newValue >= 0) {
+            product.numberOfItems = newValue;
+            updateCartPage(); // Update the cart page after changing the quantity
+          }
+        });
+        itemCount.appendChild(itemQuantityInput);
+  
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.addEventListener('click', () => removeFromCart(index));
         cartItem.appendChild(deleteButton);
+  
         cartItems.appendChild(cartItem);
       });
-
+  
       const total = calculateTotal();
       const totalDiv = document.getElementById('total');
       if (totalDiv) {
@@ -53,6 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+  
+
+  
 
 
 
