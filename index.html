@@ -242,12 +242,11 @@ async function saveData() {
 }
   </script>
   <script>
-    let cart = getCartItems(); 
-    updateCartCount(cart);
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartIcon = document.querySelector('.cart-icon');
+      const itemCount = cart.reduce((count, item) => count + item.quantity, 0);
+      cartIcon.textContent = `🛒 ${itemCount}`;
   
-    function updateCartCount(cart) {
-      document.getElementById('cart-count').innerText = cart.length;
-    }
   </script>
 </body>
 </html>

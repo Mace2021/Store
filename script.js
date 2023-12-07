@@ -123,6 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
           updateCart();
           updateCartIcon();
         }
+        if(cart.length === 0) {
+          localStorage.removeItem('cart');
+          updateCart(); 
+        }
+      
+        updateCartIcon();
       });
       cartItem.appendChild(deleteButton);
   
@@ -155,43 +161,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Function to display search results in the product-container
-function displaySearchResults(results) {
-  // Clear current products
-  const productContainer = document.getElementById('product-container');
-  productContainer.innerHTML = '';
-
-  // Display results
-  results.forEach(result => {
-    const card = createProductCard(result);
-    productContainer.appendChild(card);
-  });
-}
-// Toggle search box visibility when search icon is clicked
-document.getElementById('searchIcon').addEventListener('click', () => {
-  const searchBox = document.getElementById('searchBox');
-  searchBox.style.display = (searchBox.style.display === 'none') ? 'block' : 'none';
-});
-
-// Perform search when search box is submitted
-document.getElementById('searchForm').addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  // Get search query
-  const query = document.getElementById('searchBox').value.toLowerCase();
-
-  // Search logic here
-  // For example:
-  const results = searchProducts(query);
-
-  // Display results
-  displaySearchResults(results);
-});
-
-// Function to search products based on the search term
-function searchProducts(searchTerm) {
-  return products.filter(product =>
-    product.title.toLowerCase().includes(searchTerm)
-  );
-}
 
