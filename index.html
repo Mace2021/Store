@@ -60,35 +60,36 @@
 </style>
 </head>
 <body>
- <!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="topnav w3-white" id="myTopNav" style="letter-spacing:4px;">
-    <a class="topnav-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2 icon" href="javascript:void(0);" onclick="toggleResponsiveNav()"><i class="fa fa-bars"></i></a>
-    <a href="./index.html" class="w3-bar-item w3-button" id="logo"> 
-      <img src="./images/RFlogo.png" alt="logo" class="logo">
-    </a>
-
-    <!-- Right-sided navbar links. Hide them on small screens -->
-    <a href="./index.html" class="w3-bar-item w3-button w3-padding-large nav-link">Home</a>
-    <a href="./about.html" class="w3-bar-item w3-button w3-padding-large nav-link">About</a>
-    <a href="./store.html" class="w3-bar-item w3-button w3-padding-large nav-link">Store</a>
-    <a href="./contact.html" class="w3-bar-item w3-button w3-padding-large nav-link">Contact</a>
-
-    <!-- Add shopping cart icon and link -->
-    <a href="./cart.html" class="w3-bar-item w3-button w3-padding-large nav-link cart-icon" title="Shopping Cart">
-      <i class="fa fa-shopping-cart"></i>
-      <span id="cart-number"></span>
-    </a>
-    <form id="searchForm" class="w3-bar-item w3-button w3-padding-large nav-link" title="Search" onclick="displaySearchResults()">
-      <a href="#" id="searchIcon">
-        <i class="fa fa-search"></i>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="topnav w3-white" id="myTopNav" style="letter-spacing:4px;">
+      <a class="topnav-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2 icon" href="javascript:void(0);" onclick="toggleResponsiveNav()"><i class="fa fa-bars"></i></a>
+      <a href="./index.html" class="w3-bar-item w3-button" id="logo"> 
+        <img src="./images/RFlogo.png" alt="logo" class="logo">
       </a>
+  
+      <!-- Right-sided navbar links. Hide them on small screens -->
+   <!-- Right-sided navbar links. Hide them on small screens -->
+   <a href="./index.html" class="w3-bar-item w3-button w3-padding-large nav-link">Home</a>
+   <a href="./about.html" class="w3-bar-item w3-button w3-padding-large nav-link">About</a>
+   <a href="./store.html" class="w3-bar-item w3-button w3-padding-large nav-link">Store</a>
+   <a href="./contact.html" class="w3-bar-item w3-button w3-padding-large nav-link">Contact</a>
 
-      <!-- Search box -->
-      <input type="text" id="searchBox" class="w3-bar-item w3-input w3-padding-large nav-link" style="display: none;" placeholder="Search...">
-    </form>
-  </div>
-</div>
+     
+        <!-- Add shopping cart icon and link -->
+        <a href="./cart.html" class="w3-bar-item w3-button w3-padding-large nav-link cart-icon" title="Shopping Cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span id="cart-number"></span></a>
+          <form id="searchForm" class="w3-bar-item w3-button w3-padding-large nav-link" title="Search" onclick="displaySearchResults()">
+            <a href="#" id="searchIcon">
+              <i class="fa fa-search"></i>
+            </a>
+      
+            <!-- Search box -->
+            <input type="text" id="searchBox" class="w3-bar-item w3-input w3-padding-large nav-link" style="display: none;" placeholder="Search...">
+          </form>
+        </div>
+      </div>
 
    
   
