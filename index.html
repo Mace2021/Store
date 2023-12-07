@@ -241,6 +241,13 @@ async function saveData() {
     }
 }
   </script>
-
+  <script>
+    let cart = getCartItems(); 
+    updateCartCount(cart);
+  
+    function updateCartCount(cart) {
+      document.getElementById('cart-count').innerText = cart.length;
+    }
+  </script>
 </body>
 </html>

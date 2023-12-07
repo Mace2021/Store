@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       cartItem.appendChild(name); 
       const price = document.createElement('span');
-      price.textContent = item.price.toFixed(2);
+      price.textContent = ('$'+item.price.toFixed(2));
       cartItem.appendChild(price);
       
   
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     const totalPrice = document.createElement('div');
-    totalPrice.textContent = `Total Price: $${total.toFixed(2)}`;
+    totalPrice.textContent = `Total Price:  $${total.toFixed(2)}`;
     cartContainer.appendChild(totalPrice);
 
     // Checkout button

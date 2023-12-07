@@ -75,9 +75,10 @@
 
      
         <!-- Add shopping cart icon and link -->
-        <a href="./cart.html" class="w3-bar-item w3-button w3-padding-large nav-link cart-icon" title="Shopping Cart">
-          <i class="fa fa-shopping-cart cart-icon"></i>
-          <span id="cart-number"></span></a>
+        <a href="/cart" class="cart-icon">
+          <i class="fa fa-shopping-cart"></i> 
+          <span id="cart-count">0</span>
+        </a>
           <form id="searchForm" class="w3-bar-item w3-button w3-padding-large nav-link" title="Search" onclick="displaySearchResults()">
             <a href="#" id="searchIcon">
               <i class="fa fa-search"></i>
@@ -122,7 +123,7 @@
   </footer>
 
 
-  <script src="./script.js" type="module"></script>
+  <script type="module" src="./script.js"></script>
   <script>
     function toggleResponsiveNav() {
       var x = document.getElementById("myTopNav");
@@ -133,7 +134,14 @@
       }
     }
   </script>
+  <script>
+    let cart = getCartItems(); 
+    updateCartCount(cart);
   
+    function updateCartCount(cart) {
+      document.getElementById('cart-count').innerText = cart.length;
+    }
+  </script>
     
   </body>
 </html>
