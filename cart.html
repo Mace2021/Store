@@ -12,35 +12,73 @@
   
     /* General styles */
   /* General styles */
-body {
-  font-family: Arial, sans-serif;
-  padding-top: 10%;
+/* Add these styles to your existing CSS file or create a new one */
+body{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+ justify-content: center;
+  justify-items: center;
+  justify-content: space-evenly;
 }
-
-/* Cart styles */
-#cart {
-  width: 500px;
-  margin: 0 auto;
+.contain{
+  border: solid navy;
+padding:10%;
+  justify-content: center;
+  justify-items: center;
+  justify-content: space-between;
 }
+/* Add these styles to your existing CSS file or create a new one */
 
 .cart-item {
   display: flex;
- 
-  align-items: center;
-  border-bottom: 1px solid #ccc;
+  justify-content: space-between;
   margin-bottom: 10px;
-  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd; /* Add a border between cart items */
+  padding-bottom: 10px; /* Add padding to the bottom of each cart item */
 }
-.total{
-  display: flex;
- 
-  align-items: center;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-}
+
 .cart-item span {
   flex-basis: 30%;
+}
+
+button {
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #008CBA; /* Blue color */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #007B9A; /* Darker blue color on hover */
+}
+
+button:active {
+  background-color: #005F73; /* Even darker blue color when active */
+}
+
+button[disabled] {
+  background-color: #ccc; /* Gray color when disabled */
+  cursor: not-allowed;
+}
+
+#checkout {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#checkout:hover {
+  background-color: #45a049;
 }
 
 /* Button styles */
@@ -128,21 +166,22 @@ button[disabled] {
           </form>
         </div>
       </div>
-<!-- Header -->
-<!-- Header -->
-<div id="cart">
-  <!-- Loop through cart -->  
-  <div class="cart-item">
-    <span>Item name</span> 
-    <span>Quantity</span>
-    <span>Price</span>    
+<div class="contain">
+  <div id="cartContainer">
+    <!-- Loop through cart items -->
+    <div id="cart" class="contain">
+      <!-- Dynamic content will be added here by JavaScript -->
+    </div>
   </div>
 
-  <div class="total">Total Price</div>
+
+
   
   <!-- Checkout button will be added here by JavaScript -->
+  <button id="checkout" onclick="pps()">Checkout</button>
 </div>
 
+</div>
 
 
   
