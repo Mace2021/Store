@@ -199,7 +199,7 @@ cartItem.appendChild(incrementButton);
     if (checkoutButton) {
       checkoutButton.addEventListener('click', () => {
         // Redirect to the payment page
-        window.location.href = 'payment.html'; // Replace 'payment.html' with your actual payment page URL
+        window.location.href = 'client/checkout.html'; // Replace 'payment.html' with your actual payment page URL
       });
     }
 
@@ -221,3 +221,79 @@ cartItem.appendChild(incrementButton);
 
 
 
+        // Function to display search results in the product-container
+        function displaySearchResults(results) {
+          // Clear current products
+          const productContainer = document.getElementById('product-container');
+          productContainer.innerHTML = '';
+        
+          // Display results
+          results.forEach(result => {
+            const card = createProductCard(result);
+            productContainer.appendChild(card);
+          });
+        }
+        // Toggle search box visibility when search icon is clicked
+        document.getElementById('searchIcon').addEventListener('click', () => {
+          const searchBox = document.getElementById('searchBox');
+          searchBox.style.display = (searchBox.style.display === 'none') ? 'block' : 'none';
+        });
+        
+        // Perform search when search box is submitted
+        document.getElementById('searchForm').addEventListener('submit', (event) => {
+          event.preventDefault();
+        
+          // Get search query
+          const query = document.getElementById('searchBox').value.toLowerCase();
+        
+          // Search logic here
+          // For example:
+          const results = searchProducts(query);
+        
+          // Display results
+          displaySearchResults(results);
+        });
+        
+        // Function to search products based on the search term
+        function searchProducts(searchTerm) {
+          return products.filter(product =>
+            product.title.toLowerCase().includes(searchTerm)
+          );
+        }
+        // Placeholder for createProductCard function - replace with your implementation
+
+// Function to create product card with hyperlink
+function createProductCard(product) {
+  // Create a container div for the product card
+  const card = document.createElement('div');
+  card.classList.add('product-card');
+
+  // Create an anchor element for the hyperlink
+  const productLink = document.createElement('a');
+  productLink.href = './store.html'; // Replace with the actual URL
+
+  // Create an image element for the product image
+  const image = document.createElement('img');
+  image.src = product.image;
+  image.alt = product.title;
+  productLink.appendChild(image);
+
+  // Create an h3 element for the product title
+  const title = document.createElement('h3');
+  title.textContent = product.title;
+  productLink.appendChild(title);
+
+  // Create a p element for product description
+  const description = document.createElement('p');
+  const weight = product.description[0].weight;
+  const price = product.description[0].price;
+  description.textContent = `Weight: ${weight}, Price: $${price}`;
+  productLink.appendChild(description);
+
+  // Append the anchor element to the product card container
+  card.appendChild(productLink);
+
+  return card;
+}
+
+          

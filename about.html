@@ -79,14 +79,14 @@
           <i class="fa fa-shopping-cart"></i> 
           <span id="cart-count">0</span>
         </a>
-          <form id="searchForm" class="w3-bar-item w3-button w3-padding-large nav-link" title="Search" onclick="displaySearchResults()">
-            <a href="#" id="searchIcon">
+        <form id="searchForm" class="w3-bar-item w3-button w3-padding-large nav-link" title="Search">
+          <a href="#" id="searchIcon">
               <i class="fa fa-search"></i>
-            </a>
+          </a>
+          <!-- Search box -->
+          <input type="text" id="searchBox" class="w3-bar-item w3-input w3-padding-large nav-link" style="display: none;" placeholder="Search...">
+      </form>
       
-            <!-- Search box -->
-            <input type="text" id="searchBox" class="w3-bar-item w3-input w3-padding-large nav-link" style="display: none;" placeholder="Search...">
-          </form>
         </div>
       </div>
    
@@ -141,6 +141,7 @@
       cartIcon.textContent = `🛒 ${itemCount}`;
   
   </script>
+
     
   </body>
 </html>

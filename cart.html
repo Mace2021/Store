@@ -14,23 +14,32 @@
   /* General styles */
 /* Add these styles to your existing CSS file or create a new one */
 body{
- padding: 0;
+ padding-top: 55px;
  margin: 0;
  box-sizing: border-box;
  justify-content: center;
   justify-items: center;
   justify-content: space-evenly;
+  background-color: aliceblue;
 }
 .contain{
-  border: solid navy;
+  width: 100%;
+  margin-top: 25px;
+  height: 100%;
+  border: solid rgb(197, 208, 245);
 padding:10%;
   justify-content: center;
   justify-items: center;
   justify-content: space-between;
+
 }
 /* Add these styles to your existing CSS file or create a new one */
-
+#cartContainer{
+  height: 100%;
+ width: 100%;
+}
 .cart-item {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -106,6 +115,31 @@ button[disabled] {
   cursor: not-allowed;
 }
 
+
+.check {
+  width: 80%;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc; /* Add a border for better visual separation */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  background-color: #fff; /* Set your desired background color */
+}
+
+#payment-method {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#paypal-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#result-message {
+  text-align: center;
+  margin-top: 20px;
+  color: green; /* Set your desired text color */
+}
       /* Add your existing styles here */
 
     /* Media query for small screens */
@@ -166,23 +200,23 @@ button[disabled] {
           </form>
         </div>
       </div>
+      
 <div class="contain">
+  <div class="check">
   <div id="cartContainer">
     <!-- Loop through cart items -->
     <div id="cart" class="contain">
       <!-- Dynamic content will be added here by JavaScript -->
+     
     </div>
   </div>
 
-
-
-  
   <!-- Checkout button will be added here by JavaScript -->
-  <button id="checkout" onclick="pps()">Checkout</button>
-</div>
+  <button id="checkout" onclick="checkout()">Checkout</button>
 
+<div id="paypal-button-container"></div>
 </div>
-
+</div>
 
   
     <footer class="w3-center w3-light-grey w3-padding-32">
@@ -208,7 +242,13 @@ button[disabled] {
     }
   </script>
 
-  
+  <script>
+    function checkout() {
+      // Pass the total to the checkout page
+      const total = calculateTotal();
+      window.location.href = `client/checkout.html?total=${total}`;
+    }
+  </script>
 
 
   

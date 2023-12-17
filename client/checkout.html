@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal JS SDK Standard Integration</title>
+    <style>
+      
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f8f8f8; /* Set your desired background color */
+      }
+      .cart-item {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ddd; /* Add a border between cart items */
+        padding-bottom: 10px; /* Add padding to the bottom of each cart item */
+      }
+      .check {
+        width: 30%;
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ccc; /* Add a border for better visual separation */
+        border-radius: 8px; /* Optional: Add rounded corners */
+        background-color: #fff; /* Set your desired background color */
+      }
+      
+      #payment-method {
+        text-align: center;
+        margin-top: 20px;
+      }
+      
+      #paypal-button-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+      
+      #result-message {
+        text-align: center;
+        margin-top: 20px;
+        color: green; /* Set your desired text color */
+      }
+      
+      /* Add any additional styling as needed */
+      
+      
+      /* Add any additional styling as needed */
+      
+ 
+    </style>
+  </head>
+  <body>
+    <div class="check">
+    <div id="payment-method">
+      <p id="cart"></p>
+    </div>
+    <div id="paypal-button-container"></div>
+    <p id="result-message"></p>
+    <button type="button" onclick="moverback()">Back to cart</button>
+  </div>
+    <!-- Replace the "test" client-id value with your client-id -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AYZfRc5hz6Od6-1ltFuy4tj_wQ2-3mU87hn99kXCLPaUGDY0D1ne__EtFACpxOCsRhFk3Mw2Lt7U87z-" data-sdk-integration-source="integrationbuilder_sc"></script>
+    <script src="app.js"></script>
+    <script type="module" src="../script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Retrieve the total from the URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const total = urlParams.get('total');
+    
+        // Display the total on the checkout page
+        const totalDisplay = document.getElementById('total-display');
+        if (totalDisplay) {
+          totalDisplay.textContent = `Total: $${total}`;
+        }
+      });
+    </script>
+    <script>
+      function moverback(){
+        window.location.href ='../cart.html'
+      }
+    </script>
+  </body>
+</html>
