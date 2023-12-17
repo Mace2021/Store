@@ -4,7 +4,7 @@ import "dotenv/config";
 import path from "path";
 
 const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PORT = 5500 } = process.env;
-const base = "https://api-m.sandbox.paypal.com";
+const base = "https://sandbox.paypal.com";
 const app = express();
 
 // host static files
@@ -53,14 +53,14 @@ const createOrder = async (cart) => {
   );
 
   const accessToken = await generateAccessToken();
-  const url = `${base}/v2/checkout/orders`;
+  const url = `${base}../cart.html`;
   const payload = {
     intent: "CAPTURE",
     purchase_units: [
       {
         amount: {
           currency_code: "USD",
-          value: "100.00",
+          value: '${total}',
         },
       },
     ],

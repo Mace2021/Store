@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <title>Zeebay African Foods </title>
+  <style>
+    body{
+      margin: 0;  
+      padding: 0;
+    }
+        .gallery {
+            margin-top: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center product cards horizontally */
+          }
+        img{
+            width: 200px;
+        }
+       #product-card {
+            background-color: #fff;
+            width: 220px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            justify-content: center;
+            border-radius: 5%;
+            display: flex; /* Add flex display to center content */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center content horizontally */
+            text-align: center; /* Center text */
+            
+            border: 1px solid #ccc;
+          }
+    </style>
+</head>
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="topnav w3-white" id="myTopNav" style="letter-spacing:4px;">
+      <a class="topnav-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2 icon" href="javascript:void(0);" onclick="toggleResponsiveNav()"><i class="fa fa-bars"></i></a>
+      <a href="./index.html" class="w3-bar-item w3-button" id="logo"> 
+        <img src="./images/RFlogo.png" alt="logo" class="logo">
+      </a>
+  
+      <!-- Right-sided navbar links. Hide them on small screens -->
+   <!-- Right-sided navbar links. Hide them on small screens -->
+   <a href="./index.html" class="w3-bar-item w3-button w3-padding-large nav-link">Home</a>
+   <a href="./about.html" class="w3-bar-item w3-button w3-padding-large nav-link">About</a>
+   <a href="./store.html" class="w3-bar-item w3-button w3-padding-large nav-link">Store</a>
+   <a href="./contact.html" class="w3-bar-item w3-button w3-padding-large nav-link">Contact</a>
+  
+     
+        <!-- Add shopping cart icon and link -->
+        <a href="./cart.html" class="w3-bar-item w3-button w3-padding-large nav-link cart-icon" onclick="updateCartIcon() " title="Shopping Cart">
+          <i class="cart-icon"></i>
+          <span id="cart-number"></span></a>
+          <form id="searchForm" class="w3-bar-item w3-button w3-padding-large nav-link" title="Search" onclick="displaySearchResults()">
+            <a href="#" id="searchIcon">
+              <i class="fa fa-search"></i>
+            </a>
+      
+            <!-- Search box -->
+            <input type="text" id="searchBox" class="w3-bar-item w3-input w3-padding-large nav-link" style="display: none;" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+     
+  
+
+
+    <div class="gallery">
+        <div id="product-card">
+
+      
+        <img src="./images/Garri.JPG" alt="garri">
+       
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="Y5F2MFR4VCVGY" />
+            <table>
+              <tr>
+                <td>
+                  <input type="hidden" name="on0" value="Ijebu Garri"/>
+                  Ijebu Garri
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <select name="os0">
+                    <option value="10 Ibs">
+                      10 Ibs $17.99 USD
+                    </option>
+                    <option value="5 Ibs ">
+                      5 Ibs  $9.99 USD
+                    </option>
+                    <option value="3 Ibs">
+                      3 Ibs $6.99 USD
+                    </option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Add to Cart" />
+          </form>
+    </div>
+    <div id="product-card">
+
+      
+        <img src="./images/Oil.JPG" alt="garri">
+       
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="DZR7ZZJC38L88" />
+            <table>
+              <tr>
+                <td>
+                  <input type="hidden" name="on0" value="Red Palm Oil"/>
+                  Red Palm Oil
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <select name="os0">
+                    <option value="1 Gal">
+                      1 Gal $27.99 USD
+                    </option>
+                    <option value="1 L">
+                      1 L $8.99 USD
+                    </option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Add to Cart" />
+          </form>
+    </div>
+</div>
+</body>
+</html>

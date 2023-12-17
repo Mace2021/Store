@@ -199,7 +199,7 @@ cartItem.appendChild(incrementButton);
     if (checkoutButton) {
       checkoutButton.addEventListener('click', () => {
         // Redirect to the payment page
-        window.location.href = 'client/checkout.html'; // Replace 'payment.html' with your actual payment page URL
+        window.location.href = 'test.html'; // Replace 'payment.html' with your actual payment page URL
       });
     }
 
